@@ -7,8 +7,8 @@ package supermarket;
 
 import com.supermarket.entity.Bill;
 import com.supermarket.util.BillUtil;
-import com.supermarket.util.ScanUtil;
 import com.supermarket.util.data.DataUtil;
+import com.supermarket.util.print.PrintUtil;
 
 /**
  *
@@ -34,7 +34,7 @@ public class SuperMarket {
         // TODO code application logic here
         DataUtil.initAllData();
         Bill bill = BillUtil.create(data);
-        BillUtil.printBill(bill);
+        PrintUtil.print(bill);
     }
     
 }

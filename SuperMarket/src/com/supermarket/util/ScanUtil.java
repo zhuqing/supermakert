@@ -8,8 +8,9 @@ package com.supermarket.util;
 import com.supermarket.entity.Bill;
 import com.supermarket.entity.Item;
 import com.supermarket.util.log.LogUtil;
+import java.util.ArrayList;
+import java.util.List;
 import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 
 
 /**
@@ -18,7 +19,24 @@ import net.sf.json.JSONObject;
  */
 public class ScanUtil {
     
-    public static Item scan(String productId){
+    
+     public static List<Item> scan(String info) {
+        JSONArray array = JSONArray.fromObject(info);
+
+        List<Item> items = new ArrayList<>();
+
+        for (int i = 0; i < array.size(); i++) {
+            String id = array.getString(i);
+            items.add(ScanUtil.scanItem(id));
+        }
+
+        items = ItemUtil.mergeItems(items);
+        items = PreferentialUtil.preferential(items);
+
+        return items;
+    }
+     
+    private static Item scanItem(String productId){
         if(!productId.contains("-")){
             return ItemUtil.create(productId, 1);
         }else{

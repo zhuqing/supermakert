@@ -6,16 +6,24 @@
 package com.supermarket.entity;
 
 /**
+ * 商品
  *
  * @author zhuleqi
  */
-public class Product extends Entity{
+public class Product extends Entity {
 
+    /**
+     * 商品名称
+     */
     private String name;
+    /**
+     * 商品价格
+     */
     private Double price;
+    /**
+     * 商品的计量单位
+     */
     private String unit;
-
-  
 
     /**
      * @return the name

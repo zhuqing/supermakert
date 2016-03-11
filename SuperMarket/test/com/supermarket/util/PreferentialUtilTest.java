@@ -19,9 +19,8 @@ import static org.junit.Assert.*;
  *
  * @author zhuleqi
  */
-public class ScanUtilTest {
-
-    static String data = "["
+public class PreferentialUtilTest {
+      static String data = "["
             + "    'ITEM000001',"
             + "    'ITEM000001',"
             + "    'ITEM000001',"
@@ -33,52 +32,52 @@ public class ScanUtilTest {
             + "    'ITEM000005'"
             + "]";
 
-    public ScanUtilTest() {
+    public PreferentialUtilTest() {
         DataUtil.initAllData();
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
     }
-
+    
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of scan method, of class ScanUtil.
+     * Test of preferential method, of class PreferentialUtil.
      */
     @Test
-    public void testScan() {
-
+    public void testPreferential() {
+        System.out.println("preferential");
         List<Item> items = ScanUtil.scan(data);
-        assertEquals(3, items.size());
-        for (Item item : items) {
+       
+        List<Item> result = PreferentialUtil.preferential(items);
+        for (Item item : result) {
             switch (item.getId()) {
                 case "ITEM000001":
                     assertEquals("ITEM000001", item.getProduct().getId());
-                    assertEquals(5, item.getNumber().intValue());
+                    assertEquals(Double.valueOf(1.0), item.getFree());
                     break;
                 case "ITEM000003":
                     assertEquals("ITEM000003", item.getProduct().getId());
-                    assertEquals(2, item.getNumber().intValue());
+                    assertEquals(Double.valueOf(0.55), item.getFree());
                     break;
                 case "ITEM000005":
                     assertEquals("ITEM000005", item.getProduct().getId());
-                    assertEquals(3, item.getNumber().intValue());
+                    assertEquals(Double.valueOf(3.0), item.getFree());
                     break;
 
             }
         }
-
     }
-
+    
 }

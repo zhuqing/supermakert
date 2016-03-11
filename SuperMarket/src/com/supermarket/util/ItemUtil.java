@@ -23,25 +23,13 @@ import java.util.List;
  */
 public class ItemUtil {
 
-    public static String toString(Item item) {
-        StringBuffer itemStr = new StringBuffer();
-        itemStr.append("名称:" + item.getProduct().getName());
-        itemStr.append(", 数量:" + item.getNumber() + item.getProduct().getUnit());
-        itemStr.append(", 单价:" + item.getProduct().getPrice() + "(元)");
-        itemStr.append(", 小记:" + item.getPayFor() + "(元)");
-        if (item.getPerferential() instanceof Discount) {
-            itemStr.append(", 节省:" + item.getFree() + "(元)");
-        }
-        return itemStr.toString();
-    }
-
-    public static String toSimpleString(Item item) {
-        StringBuffer itemStr = new StringBuffer();
-        itemStr.append("名称:" + item.getProduct().getName());
-        itemStr.append(", 数量:" + item.getNumber() + item.getProduct().getUnit());
-        return itemStr.toString();
-    }
-
+    /**
+     * 通过产品ID和数量,创建item
+     *
+     * @param productId
+     * @param number
+     * @return
+     */
     public static Item create(String productId, Integer number) {
         Product product = ProductData.getInstance().getData(productId);
         if (product == null) {
@@ -50,6 +38,7 @@ public class ItemUtil {
         }
 
         Item item = new Item();
+        item.setId(productId);
         item.setNumber(number);
         item.setProduct(product);
         item.setTotal(product.getPrice() * number);
@@ -57,7 +46,13 @@ public class ItemUtil {
         return item;
     }
 
-    public static List<Item> getherItems(List<Item> items) {
+    /**
+     * 相同的Item,合并成一个
+     *
+     * @param items
+     * @return
+     */
+    public static List<Item> mergeItems(List<Item> items) {
         List<Item> list = new ArrayList<>();
         for (Item item : items) {
             int index = list.indexOf(item);
@@ -73,19 +68,6 @@ public class ItemUtil {
         return list;
     }
 
-    public static void preferential(List<Item> items) {
-        for (Item item : items) {
-            ProductPreferential p = ProductPreferentialData.getInstance().getT(item.getProduct());
-            Preferential preferential = null;
-            if (p != null) {
-                preferential = p.getPreferntial();
-            } else {
-                preferential = new NoPreferential();
-
-            }
-            preferential.countPreferential(item);
-            item.setPerferential(preferential);
-        }
-    }
+  
 
 }

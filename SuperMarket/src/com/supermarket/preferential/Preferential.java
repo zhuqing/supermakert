@@ -7,7 +7,6 @@ package com.supermarket.preferential;
 
 import com.supermarket.entity.Entity;
 import com.supermarket.entity.Item;
-import com.supermarket.entity.Product;
 
 /**
  *

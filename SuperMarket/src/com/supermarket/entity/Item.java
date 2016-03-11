@@ -10,16 +10,33 @@ import com.supermarket.preferential.Preferential;
 import java.util.Objects;
 
 /**
- *
+ *计费项目
  * @author zhuleqi
  */
 public class Item extends Entity{
+    /**
+     * 购买的商品
+     */
     private Product product;
+    /**
+     * 购买商品的数量
+     */
     private Integer number;
+    /**
+     * 购买商品的总费用
+     */
     private Double total;
+    /**
+     * 购买商品支付的总费用
+     */
     private Double payFor;
+    /**
+     * 优惠的费用
+     */
     private Double free = 0.0;
-
+    /**
+     * 优惠项
+     */
     private Preferential perferential;
     /**
      * @return the product

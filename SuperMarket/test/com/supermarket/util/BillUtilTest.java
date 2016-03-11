@@ -5,9 +5,7 @@
  */
 package com.supermarket.util;
 
-import com.supermarket.entity.Item;
-import com.supermarket.util.data.DataUtil;
-import java.util.List;
+import com.supermarket.entity.Bill;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,10 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author zhuleqi
  */
-public class ItemUtilTest {
+public class BillUtilTest {
     
-    public ItemUtilTest() {
-          DataUtil.initAllData();
+    public BillUtilTest() {
     }
     
     @BeforeClass
@@ -41,19 +38,18 @@ public class ItemUtilTest {
     public void tearDown() {
     }
 
-
     /**
-     * Test of create method, of class ItemUtil.
+     * Test of create method, of class BillUtil.
      */
     @Test
     public void testCreate() {
         System.out.println("create");
-        String productId = "ITEM000005";
-        Integer number = 2;
-        Item result = ItemUtil.create(productId, number);
-        assertEquals(productId, result.getProduct().getId());
-        assertEquals(number, result.getNumber());
-        
+        String info = "";
+        Bill expResult = null;
+        Bill result = BillUtil.create(info);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
-
+    
 }

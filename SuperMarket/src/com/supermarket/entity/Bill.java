@@ -5,21 +5,27 @@
  */
 package com.supermarket.entity;
 
-import com.supermarket.util.ItemUtil;
-import com.supermarket.util.log.LogUtil;
 import java.util.List;
 
 /**
+ * 结账小票
  *
  * @author zhuleqi
  */
-public class Bill extends Entity{
+public class Bill extends Entity {
+
+    /**
+     * 计费项目
+     */
     private List<Item> items;
+    /**
+     * 花费总金额
+     */
     private Double totle;
+    /**
+     * 节省费用
+     */
     private Double free;
-    
-   
-   
 
     /**
      * @return the items
@@ -62,5 +68,5 @@ public class Bill extends Entity{
     public void setFree(Double free) {
         this.free = free;
     }
-    
+
 }

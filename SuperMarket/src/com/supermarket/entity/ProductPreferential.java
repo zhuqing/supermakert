@@ -8,11 +8,17 @@ package com.supermarket.entity;
 import com.supermarket.preferential.Preferential;
 
 /**
- *
+ *商品与优惠的关联
  * @author zhuleqi
  */
 public class ProductPreferential extends Entity{
+    /**
+     * 商品
+     */
     private Product product;
+    /**
+     * 优惠
+     */
     private Preferential preferntial;
 
     /**

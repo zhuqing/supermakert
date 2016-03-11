@@ -9,12 +9,18 @@ import com.supermarket.entity.Item;
 import com.supermarket.entity.Product;
 
 /**
- *
+ *买赠
  * @author zhuleqi
  */
 public class BuyGive extends Preferential{
 
+    /**
+     * 购买的数量
+     */
     private Integer buyNumber;
+    /**
+     * 赠送的数量
+     */
     private Integer giveNumber;
    
     public BuyGive(String id , Integer buyNumber , Integer giveNumber){
