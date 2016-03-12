@@ -7,6 +7,7 @@ package com.supermarket.data;
 
 import com.supermarket.entity.Product;
 import com.supermarket.entity.ProductPreferential;
+import com.supermarket.preferential.BuyGive;
 import com.supermarket.preferential.Discount;
 import com.supermarket.preferential.Preferential;
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class ProductPreferentialData<T extends ProductPreferential> extends Data
         T target = null;
         for (T t : this.getDatas()) {
             if (t.getProduct().equals(product)) {
-                if (t.getPreferntial() instanceof Discount) {
+                if (t.getPreferntial() instanceof BuyGive) {
                     return t;
                 }
                 target = t;
