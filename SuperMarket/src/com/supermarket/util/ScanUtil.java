@@ -21,20 +21,38 @@ public class ScanUtil {
     
     
      public static List<Item> scan(String info) {
-        JSONArray array = JSONArray.fromObject(info);
+//        JSONArray array = JSONArray.fromObject(info);
 
         List<Item> items = new ArrayList<>();
-
-        for (int i = 0; i < array.size(); i++) {
-            String id = array.getString(i);
-            items.add(ScanUtil.scanItem(id));
+        List<String> productIds = analyze(info);
+        for(String productId:productIds){
+             items.add(ScanUtil.scanItem(productId));
         }
+
+//        for (int i = 0; i < array.size(); i++) {
+//            String id = array.getString(i);
+//            items.add(ScanUtil.scanItem(id));
+//        }
 
         items = ItemUtil.mergeItems(items);
         items = PreferentialUtil.preferential(items);
 
         return items;
     }
+     
+     private static List<String> analyze(String data){
+         data = data.trim();
+         data = data.substring(1, data.length()-1);
+         String[] strArr = data.split(",");
+         List<String> items = new ArrayList<>();
+         for(String item : strArr){
+             item = item.trim();
+             
+             items.add(item.substring(1,item.length()-1));
+         }
+         
+         return items;
+     }
      
     private static Item scanItem(String productId){
         if(!productId.contains("-")){

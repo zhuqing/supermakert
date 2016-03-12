@@ -3,30 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/util/data/DataUtil.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/util/ItemUtil.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/preferential/Preferential.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/data/DataFactory.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/test/com/supermarket/util/ScanUtilTest.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/entity/ProductPreferential.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/entity/Bill.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/test/com/supermarket/preferential/DiscountTest.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/util/BillUtil.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/data/PreferentialData.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/data/ProductData.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/util/ScanUtil.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/test/com/supermarket/preferential/BuyGiveTest.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/test/com/supermarket/util/ItemUtilTest.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/supermarket/SuperMarket.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/entity/Item.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/preferential/Discount.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/preferential/BuyGive.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/data/ProductPreferentialData.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/util/log/LogUtil.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/test/com/supermarket/data/PreferentialDataTest.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/preferential/NoPreferential.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/src/com/supermarket/entity/Product.java</file>
-            <file>file:/Users/zhuleqi/NetBeansProjects/SuperMarket/test/com/supermarket/data/ProductDataTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/util/ItemUtilTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/entity/Item.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/data/ProductDataTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/entity/Bill.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/preferential/DiscountTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/preferential/BuyGive.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/util/PreferentialUtil.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/preferential/BuyGiveTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/util/ItemUtil.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/preferential/Preferential.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/util/BillUtilTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/util/PreferentialUtilTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/util/print/PrintUtil.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/data/PreferentialData.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/util/BillUtil.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/data/PreferentialDataTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/util/ScanUtil.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/preferential/Discount.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/test/com/supermarket/util/ScanUtilTest.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/supermarket/SuperMarket.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/entity/Product.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/data/ProductPreferentialData.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/data/DataFactory.java</file>
+            <file>file:/Users/zhuleqi/GitHub/supermakert/SuperMarket/src/com/supermarket/entity/ProductPreferential.java</file>
         </group>
     </open-files>
 </project-private>
