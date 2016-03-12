@@ -10,59 +10,69 @@ import com.supermarket.util.log.LogUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
  * @author zhuleqi
  */
 public class ScanUtil {
-    
-    
-     public static List<Item> scan(String info) {
-//        JSONArray array = JSONArray.fromObject(info);
+
+    /**
+     * 扫描输入信息
+     *
+     * @param info
+     * @return
+     */
+    public static List<Item> scan(String info) {
 
         List<Item> items = new ArrayList<>();
         List<String> productIds = analyze(info);
-        for(String productId:productIds){
-             items.add(ScanUtil.scanItem(productId));
+        for (String productId : productIds) {
+            items.add(ScanUtil.createItem(productId));
         }
-
-//        for (int i = 0; i < array.size(); i++) {
-//            String id = array.getString(i);
-//            items.add(ScanUtil.scanItem(id));
-//        }
 
         items = ItemUtil.mergeItems(items);
         items = PreferentialUtil.preferential(items);
 
         return items;
     }
-     
-     private static List<String> analyze(String data){
-         data = data.trim();
-         data = data.substring(1, data.length()-1);
-         String[] strArr = data.split(",");
-         List<String> items = new ArrayList<>();
-         for(String item : strArr){
-             item = item.trim();
-             
-             items.add(item.substring(1,item.length()-1));
-         }
-         
-         return items;
-     }
-     
-    private static Item scanItem(String productId){
-        if(!productId.contains("-")){
+
+    /**
+     * 分析输入数据
+     *
+     * @param data
+     * @return
+     */
+    private static List<String> analyze(String data) {
+        data = data.trim();
+        data = data.substring(1, data.length() - 1);
+        String[] strArr = data.split(",");
+        List<String> items = new ArrayList<>();
+        for (String item : strArr) {
+            item = item.trim();
+
+            items.add(item.substring(1, item.length() - 1));
+        }
+
+        return items;
+    }
+
+    /**
+     * 生产Item
+     *
+     * @param productId
+     * @return
+     */
+    private static Item createItem(String productId) {
+        if (!productId.contains("-")) {
             return ItemUtil.create(productId, 1);
-        }else{
-            String[] productIdArr= productId.split("-");
-            if(productIdArr.length==2){
+        } else {
+            String[] productIdArr = productId.split("-");
+            if (productIdArr.length == 2) {
                 Integer number = Integer.valueOf(productIdArr[1]);
                 return ItemUtil.create(productIdArr[0], number);
             }
         }
-        LogUtil.logErr(productId+" has problem!!");
+        LogUtil.logErr(productId + " has problem!!");
         return null;
     }
 
