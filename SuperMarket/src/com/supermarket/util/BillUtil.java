@@ -7,16 +7,7 @@ package com.supermarket.util;
 
 import com.supermarket.entity.Bill;
 import com.supermarket.entity.Item;
-import com.supermarket.preferential.NoPreferential;
-import com.supermarket.preferential.Preferential;
-import com.supermarket.util.log.LogUtil;
-import com.supermarket.util.print.PrintUtil;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import net.sf.json.JSONArray;
 
 /**
  *

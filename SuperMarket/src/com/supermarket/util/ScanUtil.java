@@ -5,12 +5,10 @@
  */
 package com.supermarket.util;
 
-import com.supermarket.entity.Bill;
 import com.supermarket.entity.Item;
 import com.supermarket.util.log.LogUtil;
 import java.util.ArrayList;
 import java.util.List;
-import net.sf.json.JSONArray;
 
 
 /**
