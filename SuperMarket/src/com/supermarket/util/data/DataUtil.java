@@ -7,16 +7,15 @@ package com.supermarket.util.data;
 
 import com.supermarket.data.PreferentialData;
 import com.supermarket.data.ProductData;
-import com.supermarket.data.ProductPreferentialData;
+import com.supermarket.data.relationship.ProductPreferentialData;
 
 /**
  *
  * @author zhuleqi
  */
 public class DataUtil {
-    public static void initAllData(){
+    public static void initData(){
         PreferentialData.getInstance().initData();
         ProductData.getInstance().initData();
-        ProductPreferentialData.getInstance().initData();
     }
 }

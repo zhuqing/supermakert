@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
 public class ItemUtilTest {
     
     public ItemUtilTest() {
-          DataUtil.initAllData();
+          DataUtil.initData();
     }
     
     @BeforeClass

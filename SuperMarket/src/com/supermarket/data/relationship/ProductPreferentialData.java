@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.supermarket.data;
+package com.supermarket.data.relationship;
 
+import com.supermarket.data.DataFactory;
+import com.supermarket.data.PreferentialData;
+import com.supermarket.data.ProductData;
 import com.supermarket.entity.Product;
 import com.supermarket.entity.ProductPreferential;
 import com.supermarket.preferential.BuyGive;
@@ -31,18 +34,16 @@ public class ProductPreferentialData<T extends ProductPreferential> extends Data
         return productPreferentialData;
     }
 
-    private ProductPreferentialData() {
+    protected ProductPreferentialData() {
 
     }
 
     @Override
     public void initData() {
-        this.getDatas().add(this.createData("pp0001", "ITEM000005", "pre00001"));
-        this.getDatas().add(this.createData("pp0002", "ITEM000003", "pre00002"));
-        this.getDatas().add(this.createData("pp0003", "ITEM000001", "pre00003"));
+        this.getDatas().clear();
     }
 
-    private T createData(String id, String productId, String preferentialId) {
+    protected T createData(String id, String productId, String preferentialId) {
         Product product = ProductData.getInstance().getData(productId);
         Preferential preferential = (Preferential) PreferentialData.getInstance().getData(preferentialId);
         ProductPreferential p = new ProductPreferential();

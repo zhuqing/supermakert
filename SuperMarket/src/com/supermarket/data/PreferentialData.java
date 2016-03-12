@@ -36,6 +36,7 @@ public class PreferentialData<T extends Preferential> extends DataFactory<T> {
 
     @Override
     public void initData() {
+        this.getDatas().clear();
         this.getDatas().add(this.createBuyGive("pre00001", "买二赠一", 2, 1));
         this.getDatas().add(this.createButDiscount("pre00002", "九五折", 0.95));
         this.getDatas().add(this.createBuyGive("pre00003", "买四赠一", 4, 1));

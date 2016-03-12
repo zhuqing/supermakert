@@ -6,13 +6,8 @@
 package com.supermarket.util;
 
 import com.supermarket.data.ProductData;
-import com.supermarket.data.ProductPreferentialData;
 import com.supermarket.entity.Item;
 import com.supermarket.entity.Product;
-import com.supermarket.entity.ProductPreferential;
-import com.supermarket.preferential.Discount;
-import com.supermarket.preferential.NoPreferential;
-import com.supermarket.preferential.Preferential;
 import com.supermarket.util.log.LogUtil;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,5 +64,6 @@ public class ItemUtil {
     }
 
   
+   
 
 }

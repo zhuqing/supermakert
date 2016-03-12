@@ -32,12 +32,21 @@ public class BuyGive extends Preferential{
     
     @Override
     public void countPreferential(Item item) {
-        Integer times = item.getNumber()/(this.getBuyNumber()+this.getGiveNumber());
-        Integer more = item.getNumber()%(this.getBuyNumber()+this.getGiveNumber());
-        
-        double payFor = (getBuyNumber()*times+more)*item.getProduct().getPrice();
+       
+        double free = this.getFreeNumber(item)*item.getProduct().getPrice();
+        double payFor = item.getTotal()-free;
         item.setPayFor(payFor);
-        item.setFree(item.getTotal()-item.getPayFor());
+        item.setFree(free);
+    }
+    
+    /**
+     * 获取免费的数量
+     * @param item
+     * @return 
+     */
+    public Integer getFreeNumber(Item item){
+        Integer times = item.getNumber()/(this.getBuyNumber()+this.getGiveNumber());
+        return times*this.getGiveNumber();
     }
 
     /**

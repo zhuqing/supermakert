@@ -7,9 +7,11 @@ package com.supermarket.util.print;
 
 import com.supermarket.entity.Bill;
 import com.supermarket.entity.Item;
+import com.supermarket.preferential.BuyGive;
 import com.supermarket.preferential.Discount;
 import com.supermarket.preferential.NoPreferential;
 import com.supermarket.preferential.Preferential;
+import com.supermarket.util.PreferentialUtil;
 import com.supermarket.util.log.LogUtil;
 import java.util.List;
 import java.util.Map;
@@ -34,10 +36,10 @@ public class PrintUtil {
         return itemStr.toString();
     }
 
-    public static String printSimple(Item item) {
+    public static String printBuyGive(Item item) {
         StringBuffer itemStr = new StringBuffer();
         itemStr.append("名称:" + item.getProduct().getName());
-        itemStr.append(", 数量:" + item.getNumber() + item.getProduct().getUnit());
+        itemStr.append(", 数量:" + PreferentialUtil.getFreeNumber(item) + item.getProduct().getUnit());
         return itemStr.toString();
     }
 
@@ -50,21 +52,24 @@ public class PrintUtil {
         Map<Preferential, List<Item>> itemsMap = groupByPreferential(bill.getItems());
 
         for (Preferential p : itemsMap.keySet()) {
-            if (p instanceof NoPreferential) {
+            if (!(p instanceof BuyGive)) {
                 continue;
             }
+            
             LogUtil.logInfo("----------------------");
             LogUtil.logInfo(p.getName() + "商品");
             for (Item item : itemsMap.get(p)) {
-                LogUtil.logInfo(PrintUtil.printSimple(item));
+                LogUtil.logInfo(PrintUtil.printBuyGive(item));
             }
         }
 
         LogUtil.logInfo("----------------------");
-        LogUtil.logInfo("总计:" + bill.getTotle());
+        LogUtil.logInfo("总计:" + bill.getTotle()+"(元)");
         if (bill.getFree() > 0) {
-            LogUtil.logInfo("小记:" + bill.getFree());
+            LogUtil.logInfo("节省:" + bill.getFree()+"(元)");
         }
+        
+         LogUtil.logInfo("*********************");
 
     }
 

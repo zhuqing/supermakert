@@ -34,7 +34,7 @@ public class ScanUtilTest {
             + "]";
 
     public ScanUtilTest() {
-        DataUtil.initAllData();
+        DataUtil.initData();
     }
 
     @BeforeClass

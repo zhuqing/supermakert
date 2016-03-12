@@ -5,9 +5,10 @@
  */
 package com.supermarket.util;
 
-import com.supermarket.data.ProductPreferentialData;
+import com.supermarket.data.relationship.ProductPreferentialData;
 import com.supermarket.entity.Item;
 import com.supermarket.entity.ProductPreferential;
+import com.supermarket.preferential.BuyGive;
 import com.supermarket.preferential.NoPreferential;
 import com.supermarket.preferential.Preferential;
 import java.util.List;
@@ -17,6 +18,8 @@ import java.util.List;
  * @author zhuleqi
  */
 public class PreferentialUtil {
+    
+    public static ProductPreferentialData currentProductPreferentialData;
 
     /**
      * 计算所有item的优惠
@@ -25,7 +28,7 @@ public class PreferentialUtil {
      */
     public static List<Item> preferential(List<Item> items) {
         for (Item item : items) {
-            ProductPreferential p = ProductPreferentialData.getInstance().getT(item.getProduct());
+            ProductPreferential p = currentProductPreferentialData.getT(item.getProduct());
             Preferential preferential = null;
             if (p != null) {
                 preferential = p.getPreferntial();
@@ -39,4 +42,22 @@ public class PreferentialUtil {
 
         return items;
     }
+    
+     public static Integer getFreeNumber(Item item){
+         if(!(item.getPerferential() instanceof BuyGive)){
+             return 0;
+         }
+         
+         BuyGive buyGive = (BuyGive) item.getPerferential();
+         return buyGive.getFreeNumber(item);
+    }
+     
+     
+     public static void initProductPreferentialData(ProductPreferentialData productPreferentialData){
+         if(productPreferentialData == null){
+             productPreferentialData = ProductPreferentialData.getInstance();
+         }
+         currentProductPreferentialData = productPreferentialData;
+         currentProductPreferentialData.initData();
+     }
 }

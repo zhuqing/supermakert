@@ -33,7 +33,7 @@ public class PreferentialUtilTest {
             + "]";
 
     public PreferentialUtilTest() {
-        DataUtil.initAllData();
+        DataUtil.initData();
     }
     
     @BeforeClass

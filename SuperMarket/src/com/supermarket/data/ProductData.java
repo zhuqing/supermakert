@@ -34,7 +34,7 @@ public class ProductData<T extends Product> extends DataFactory<T>{
     
     @Override 
     public void initData() {
-      
+       this.getDatas().clear();
         this.getDatas().add(this.createProduct("ITEM000001", "羽毛球", 1.0, "个"));
         this.getDatas().add(this.createProduct("ITEM000003", "苹果", 5.5, "斤"));
         this.getDatas().add(this.createProduct("ITEM000005", "可口可乐", 3.0, "瓶"));
